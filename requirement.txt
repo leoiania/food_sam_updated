@@ -7,3 +7,6 @@ cloudpickle==2.2.1
 omegaconf==2.3.0
 pycocotools==2.0.6
 werkzeug==2.2.3
+huggingface-hub==0.20.3
+diffusers==0.27.2
+segment-anything==1.0

@@ -6,7 +6,6 @@ import sys
 import argparse
 import cv2
 from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
-from mmcv.utils import DictAction
 import argparse
 import os
 import numpy as np
@@ -14,7 +13,7 @@ from typing import Any, Dict, List
 import shutil, logging
 from FoodSAM_tools.panoramic_segment import panoramic_segment
 from FoodSAM_tools.object_detection import object_detect
-from FoodSAM_tools.predict_semantic_mask import semantic_predict
+# from FoodSAM_tools.predict_semantic_mask import semantic_predict
 
 parser = argparse.ArgumentParser(
     description=(
@@ -75,13 +74,13 @@ parser.add_argument("--device", type=str, default="cuda", help="The device to ru
 parser.add_argument(
     '--aug-test', action='store_true', help='Use Flip and Multi scale aug')
 
-parser.add_argument(
-    '--options', nargs='+', action=DictAction, help='custom options')
-parser.add_argument(
-    '--eval-options',
-    nargs='+',
-    action=DictAction,
-    help='custom options for evaluation')
+#parser.add_argument(
+#    '--options', nargs='+', action=DictAction, help='custom options')
+# parser.add_argument(
+#     '--eval-options',
+#     nargs='+',
+#     action=DictAction,
+#     help='custom options for evaluation')
 parser.add_argument('--color_list_path', type=str, default="FoodSAM/FoodSAM_tools/color_list.npy")
 
 parser.add_argument(
@@ -311,9 +310,9 @@ def main(args: argparse.Namespace) -> None:
         shutil.copyfile(t, os.path.join(save_base, "input.jpg"))
     logger.info("sam done!\n")
 
-    logger.info("running semantic seg model!")
-    semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
-    logger.info("semantic predict done!\n")
+    # logger.info("running semantic seg model!")
+    # semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
+    # logger.info("semantic predict done!\n")
 
     logger.info("running object detection model")
     object_detect(args)

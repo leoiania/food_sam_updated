@@ -16,8 +16,6 @@ sys.path.append('./UNIDET/detectron2')
 # from detectron2.detectron2.utils.logger import setup_logger
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
-from UNIDET.unidet.predictor import UnifiedVisualizationDemo
-from UNIDET.unidet.config import add_unidet_config
 
 
 # constants
