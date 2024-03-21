@@ -16,8 +16,10 @@ sys.path.append('./UNIDET/detectron2')
 # from detectron2.detectron2.utils.logger import setup_logger
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
-
-
+sys.path.append('..')
+sys.path.append('FoodSAM')
+from UNIDET.unidet.predictor import UnifiedVisualizationDemo
+from UNIDET.unidet.config import add_unidet_config
 # constants
 WINDOW_NAME = "Unified detections"
 import json
@@ -97,7 +99,7 @@ def object_detect(args):
 
             img_name = os.path.basename(path)
             output_dir = os.path.join(args.output, img_name.split('.')[0], 'object_detection')
-            visualize_to_json(predictions, demo.metadata.thing_classes, img_name, output_dir)
+            #visualize_to_json(predictions, demo.metadata.thing_classes, img_name, output_dir)
 
             logger.info(
                 "{}: {} in {:.2f}s".format(
