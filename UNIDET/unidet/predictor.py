@@ -29,7 +29,11 @@ class UnifiedVisualizationDemo(object):
         # self.metadata.thing_classes = [
         #     '{}'.format([xx for xx in x['name'].split('_') if xx != ''][0]) \
         #         for x in unified_label_file['categories']]
-        self.cpu_device = torch.device("cpu")
+        if torch.cuda.is_available():
+            device = "cuda"
+        else:
+            device = "cpu"
+        self.cpu_device = torch.device(device)
         self.instance_mode = instance_mode
 
         self.parallel = parallel

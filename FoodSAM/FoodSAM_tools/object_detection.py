@@ -99,7 +99,7 @@ def object_detect(args):
 
             img_name = os.path.basename(path)
             output_dir = os.path.join(args.output, img_name.split('.')[0], 'object_detection')
-            #visualize_to_json(predictions, demo.metadata.thing_classes, img_name, output_dir)
+            visualize_to_json(predictions, demo.metadata.thing_classes, img_name, output_dir)
 
             logger.info(
                 "{}: {} in {:.2f}s".format(
@@ -111,11 +111,11 @@ def object_detect(args):
                 )
             )
 
-            # if args.output:
-            #     if os.path.isdir(args.output):
-            #         assert os.path.isdir(args.output), args.output
-            #         out_filename = os.path.join(args.output, img_name.split('.')[0], 'detection_vis.png')
-            #         assert len(args.input) == 1, "Please specify a directory with args.output"
-            #         out_filename = args.output
-            #     visualized_output.save(out_filename)
+            if args.output:
+                if os.path.isdir(args.output):
+                    assert os.path.isdir(args.output), args.output
+                    out_filename = os.path.join(args.output, img_name.split('.')[0], 'detection_vis.png')
+                    assert len(args.input) == 1, "Please specify a directory with args.output"
+                    out_filename = args.output
+                visualized_output.save(out_filename)
     

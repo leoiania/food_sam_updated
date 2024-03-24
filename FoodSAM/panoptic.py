@@ -308,11 +308,12 @@ def main(args: argparse.Namespace) -> None:
         os.makedirs(save_base, exist_ok=True)
         write_masks_to_folder(masks, save_base)
         shutil.copyfile(t, os.path.join(save_base, "input.jpg"))
+        
     logger.info("sam done!\n")
 
-    # logger.info("running semantic seg model!")
-    # semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
-    # logger.info("semantic predict done!\n")
+    logger.info("running semantic seg model!")
+    semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
+    logger.info("semantic predict done!\n")
 
     logger.info("running object detection model")
     object_detect(args)
