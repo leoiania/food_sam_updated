@@ -34,6 +34,7 @@ class UnifiedVisualizationDemo(object):
         else:
             device = "cpu"
         self.cpu_device = torch.device(device)
+        print('self cpu device from predictor is: ',self.cpu_device )
         self.instance_mode = instance_mode
 
         self.parallel = parallel
