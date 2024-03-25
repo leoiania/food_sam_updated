@@ -11,8 +11,8 @@ import os
 import numpy as np
 from typing import Any, Dict, List
 import shutil, logging
-from FoodSAM_tools.panoramic_segment import panoramic_segment
-from FoodSAM_tools.object_detection import object_detect
+# from FoodSAM_tools.panoramic_segment import panoramic_segment
+# from FoodSAM_tools.object_detection import object_detect
 # from FoodSAM_tools.predict_semantic_mask import semantic_predict
 
 parser = argparse.ArgumentParser(
