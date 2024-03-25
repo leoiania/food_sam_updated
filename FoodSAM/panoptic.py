@@ -311,20 +311,20 @@ def main(args: argparse.Namespace) -> None:
         
     logger.info("sam done!\n")
 
-    logger.info("running semantic seg model!")
-    semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
-    logger.info("semantic predict done!\n")
+    # logger.info("running semantic seg model!")
+    # semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
+    # logger.info("semantic predict done!\n")
 
-    logger.info("running object detection model")
-    object_detect(args)
-    logger.info("object detection done!\n")
+    # logger.info("running object detection model")
+    # object_detect(args)
+    # logger.info("object detection done!\n")
 
 
-    logger.info("panoramic segmentation!")
-    panoramic_segment(args.output, args.category_txt, args.color_list_path, num_class=args.num_class, area_thr=args.area_thr, ratio_thr=args.ratio_thr, top_k=args.top_k)
-    logger.info("panoramic segmentation done!\n")
+    # logger.info("panoramic segmentation!")
+    # panoramic_segment(args.output, args.category_txt, args.color_list_path, num_class=args.num_class, area_thr=args.area_thr, ratio_thr=args.ratio_thr, top_k=args.top_k)
+    # logger.info("panoramic segmentation done!\n")
 
-    logger.info("The results saved in {}!\n".format(args.output))
+    # logger.info("The results saved in {}!\n".format(args.output))
 
 if __name__ == "__main__":
     args = parser.parse_args()

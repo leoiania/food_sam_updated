@@ -10,4 +10,3 @@ huggingface-hub==0.20.3
 diffusers==0.27.2
 segment-anything==1.0
 mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
-detectron2 @ git+https://github.com/facebookresearch/detectron2.git
